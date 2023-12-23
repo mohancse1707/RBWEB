@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2020. MK Groups.
+  ~ All rights reserved.
+  ~ All data of MK groups are confidential.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.reservebuddy</groupId>
+    <artifactId>reserve-buddy-application</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>reserve-buddy-web</artifactId>
+  <name>reserve-buddy-web</name>
+  <description>ReserveBuddy web</description>
+
+    <properties>
+        <node.version>v12.18.3</node.version>
+        <npm.version>6.14.6</npm.version>
+    </properties>
+  <build>
+    <resources>
+      <resource>
+        <directory>dist</directory>
+        <targetPath>${basedir}/target/classes/META-INF/resources/</targetPath>
+      </resource>
+    </resources>
+  </build>
+  <profiles>
+    <profile>
+      <id>dev</id>
+    </profile>
+      <profile>
+          <id>stg</id>
+          <build>
+              <plugins>
+                  <plugin>
+                      <groupId>com.github.eirslett</groupId>
+                      <artifactId>frontend-maven-plugin</artifactId>
+                      <executions>
+                          <execution>
+                              <id>install node and npm</id>
+                              <goals>
+                                  <goal>install-node-and-npm</goal>
+                              </goals>
+                              <configuration>
+                                  <nodeVersion>${node.version}</nodeVersion>
+                                  <npmVersion>${npm.version}</npmVersion>
+                              </configuration>
+                          </execution>
+                          <execution>
+                              <id>npm install</id>
+                              <goals>
+                                  <goal>npm</goal>
+                              </goals>
+                          </execution>
+                          <execution>
+                              <id>webpack build prod</id>
+                              <goals>
+                                  <goal>npm</goal>
+                              </goals>
+                              <phase>generate-resources</phase>
+                              <configuration>
+                                  <arguments>run webpack:build</arguments>
+                                  <npmInheritsProxyConfigFromMaven>false</npmInheritsProxyConfigFromMaven>
+                              </configuration>
+                          </execution>
+                      </executions>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
+    <profile>
+      <id>prod</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>install node and npm</id>
+                                <goals>
+                                    <goal>install-node-and-npm</goal>
+                                </goals>
+                                <configuration>
+                                    <nodeVersion>${node.version}</nodeVersion>
+                                    <npmVersion>${npm.version}</npmVersion>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>npm install</id>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>webpack build prod</id>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                                <phase>generate-resources</phase>
+                                <configuration>
+                                    <arguments>run webpack:build</arguments>
+                                    <npmInheritsProxyConfigFromMaven>false</npmInheritsProxyConfigFromMaven>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+    </profile>
+  </profiles>
+</project>

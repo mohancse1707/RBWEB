@@ -1,0 +1,55 @@
+/*
+ * Copyright (c) 2020. ReserveBuddy.
+ * All rights reserved.
+ * All data of ReserveBuddy are confidential.
+ *
+ *
+ */
+
+/*body {*/
+/*  margin: 0;*/
+/*}*/
+
+/*.mb-50 {*/
+/*  margin-top: 45px;*/
+/*}*/
+
+/*.ant-form-vertical .ant-form-item-label,*/
+/*.ant-col-24.ant-form-item-label,*/
+/*.ant-col-xl-24.ant-form-item-label {*/
+/*  padding: 0 0 2px !important;*/
+/*}*/
+/*.ant-form-item {*/
+/*  margin-bottom: 8px;*/
+/*}*/
+/*.login-form-forgot {*/
+/*  float: right;*/
+/*}*/
+/*.ant-col-rtl .login-form-forgot {*/
+/*  float: left;*/
+/*}*/
+/*.ant-drawer-content-wrapper {*/
+/*  height: auto !important;*/
+/*}*/
+
+/*.ant-descriptions-title {*/
+/*  flex: inherit;*/
+/*}*/
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+.ant-layout-header {
+  height: 64px;
+  padding: 0 50px;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 64px;
+  background: #2f4757;
+}
+
+.my-account-section {
+  border-radius: 10px;
+  border: solid 1px #cacaca;
+  background-color: #fff;
+  padding: 20px 30px 2px;
+}

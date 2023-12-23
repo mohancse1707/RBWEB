@@ -1,0 +1,17 @@
+/*
+ * Copyright (c) 2021. ReserveBuddy.
+ *  All rights reserved.
+ * All data of ReserveBuddy are confidential.
+ *
+ *
+ */
+
+.rb-search-tab-cont {
+  position: relative;
+  background: rgba(119, 118, 118, 0.4);
+  padding: 20px 30px;
+  margin-bottom: 20px;
+  border-radius: 50px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
